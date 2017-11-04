@@ -1,0 +1,32 @@
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      
+        <ul class="nav navbar-nav">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink='/'>Main</a>
+            </li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink='/todolist'>ToDo List</a>
+            </li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink='/calender'>Calender</a>
+            </li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink='/heros'>Heros</a>
+            </li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink='/formControlers'>Form Controllers</a>
+            </li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink='/angularLifecycle'>Angular Lifecycle</a>
+            </li>
+            
+        </ul>
+
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<router-outlet></router-outlet>
