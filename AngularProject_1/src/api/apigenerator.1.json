@@ -1,0 +1,55 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    isActive: '{{bool()}}',
+    picture: 'http://placehold.it/32x32',
+    name: '{{firstName()}} {{surname()}}',
+    email: '{{email()}}',
+    phone: '+1 {{phone()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    about: '{{lorem(1, "paragraphs")}}',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    latitude: '{{floating(-90.000001, 90)}}',
+    longitude: '{{floating(-180.000001, 180)}}',
+    tags: [
+      '{{repeat(7)}}',
+      '{{lorem(1, "words")}}'
+    ],
+    comments: [
+      '{{repeat(3)}}',
+      {
+        id: '{{index()}}',
+        name: '{{firstName()}} {{surname()}}',
+        remark: '{{lorem(1, "paragraphs")}}'
+      }
+    ],
+     inverter: {
+        id: '{{index()}}',
+        manufacturerName: function (tags) {
+      var inverters = ['Solar Edge', 'SMA', 'Fronius'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+         type: function (tags) {
+      var inverters = ['SE3800A-US', 'SE1000A-US', 'SE11000A-US'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+        maxPowerOutput: '{{integer(3000, 12000)}}',
+        acOutputVoltage: function (tags) {
+      var inverters = ['208', '240', '480'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    }
+      },
+   
+    greeting: function (tags) {
+      return 'Hello, ' + this.name + '! there are ' + tags.integer(1, 10) + ' important messages.';
+    },
+    
+    
+    favoriteFruit: function (tags) {
+      var fruits = ['apple', 'banana', 'strawberry'];
+      return fruits[tags.integer(0, fruits.length - 1)];
+    }
+  }
+]

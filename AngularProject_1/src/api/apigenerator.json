@@ -1,0 +1,62 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    name: '{{firstName()}} {{surname()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    dateCreated: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+
+    inverterId: function (tags) {
+      var inverters = ['1', '2', '3', '4'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    panelId: function (tags) {
+      var inverters = ['1', '2', '3', '4'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    servicePanelBreakerSize: function (tags) {
+      var inverters = ['100', '150', '200', '125'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    servicePanelBreakerType: function (tags) {
+      var inverters = ['SquareD', 'Cutler Hammer', 'GM'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    
+    },
+    servicePanelSpaceAvailable: function (tags) {
+      var inverters = ['yes', 'No'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    generatorAvailable: function (tags) {
+      var inverters = ['yes', 'No'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    generatorSize: '',
+    jobType: function (tags) {
+      var inverters = ['lease', 'purchase'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    numberOfModulesStringOne: function (tags) {
+      var inverters = ['8', '9','10','11','12'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    numberOfModulesStringTwo: function (tags) {
+      var inverters = ['8', '9','10','11','12'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    numberOfModulesStringThree: function (tags) {
+      var inverters = ['8', '9','10','11','12'];
+      return inverters[tags.integer(0, inverters.length - 1)];
+    },
+    comments: [
+      '{{repeat(3)}}',
+      {
+        id: '{{index()}}',
+        name: '{{firstName()}} {{surname()}}',
+        remark: '{{lorem(1, "paragraphs")}}'
+      }
+    ]
+    
+  }
+]
