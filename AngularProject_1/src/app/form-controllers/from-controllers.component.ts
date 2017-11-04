@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'prj-from-controllers',
   template: `
     <p>
-      from-controllers Works!
+      from-controllers Works! input-box
     </p>
     <router-outlet></router-outlet>
   `,

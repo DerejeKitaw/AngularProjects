@@ -9,11 +9,13 @@ import { CalenderModule } from './calender/calender.module';
 import { HerosModule } from './heros/heros.module';
 import { FormControllersModule } from './form-controllers/form-controllers.module';
 import { AngularLifecycleModule } from './angular-lifecycle/angular-lifecycle.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
